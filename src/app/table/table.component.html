@@ -1,0 +1,24 @@
+<div class="col-sm-7">
+<app-new-product></app-new-product>
+<table class="table table-hover">
+  <thead>
+  <tr>
+    <th>Product Name</th>
+    <th>Product Price</th>
+    <th></th>
+    <th></th>
+  </tr>
+</thead>
+<tbody>    
+  <tr my-tr *ngFor="let product of products; let i=index"
+      [product]="product"
+      [id]="i">      
+</tr>
+</tbody>
+</table>
+</div>
+<div class="col-sm-5">
+  <app-cockpit *ngIf="loadedForm===true"
+  (postProduct)="onPostProduct($event)">    
+  </app-cockpit>   
+</div>
